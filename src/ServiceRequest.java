@@ -1,14 +1,14 @@
 public class ServiceRequest {
-    private ETypeEnum type;
+    private ETypeRequest type;
     private String request = "";
     private String conclusion = "";
 
-    public ServiceRequest(ETypeEnum type, String request) {
+    public ServiceRequest(ETypeRequest type, String request) {
         this.type = type;
         this.request = request;
     }
 
-    public ETypeEnum getType() {
+    public ETypeRequest getType() {
         return type;
     }
 
