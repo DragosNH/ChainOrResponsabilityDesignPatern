@@ -1,13 +1,16 @@
-public class Sergent {
+public class Sergent implements ISupportService {
     private ISupportService next = null;
 
-    public void setNext(ServiceRequest next) {
-        this.next = (ISupportService) next;
+
+    @Override
+    public void setNext(ISupportService next) {
+        this.next = next;
     }
 
+    @Override
     public void handleRequest(ServiceRequest request){
-        if(request.getType() == ETypeRequest.CAPORAL){
-            request.setConclusion("Caporal resolved the issue");
+        if(request.getType() == ETypeRequest.SERGENT){
+            request.setConclusion("The sergent resolved the issue");
         } else {
             if(next != null){
                 next.handleRequest(request);

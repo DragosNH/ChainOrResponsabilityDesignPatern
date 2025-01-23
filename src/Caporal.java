@@ -1,4 +1,4 @@
-public class Soldat implements ISupportService {
+public class Caporal implements ISupportService {
     private ISupportService next = null;
 
 
@@ -8,13 +8,11 @@ public class Soldat implements ISupportService {
     }
 
     public void handleRequest(ServiceRequest request){
-        if (request.getType() == ETypeRequest.SOLDAT){
-            request.setConclusion("The soldger resolved the task");
+        if(request.getType() == ETypeRequest.CAPORAL){
+            request.setConclusion("The caporal resolved the issue");
         } else {
             if(next != null){
                 next.handleRequest(request);
-            } else {
-                request.setConclusion("The soldger could not resolve the task this time");
             }
         }
     }

@@ -6,6 +6,7 @@ public class General implements ISupportService{
         this.next = next;
     }
 
+
     @Override
     public void handleRequest(ServiceRequest request) {
         if(request.getType() == ETypeRequest.GENERAL) {
